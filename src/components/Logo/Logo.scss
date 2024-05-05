@@ -8,3 +8,9 @@
 
    cursor: pointer;
 }
+
+@media screen and (max-width: 550px) {
+   .logo {
+      font-size: 24px;
+   }
+}
