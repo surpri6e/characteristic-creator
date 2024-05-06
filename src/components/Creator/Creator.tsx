@@ -16,10 +16,14 @@ const Creator = () => {
    const [studyPlace, setStudyPlace] = useState('');
    const [workPlace, setWorkPlace] = useState('');
 
+   //! WARNING!
+   const [sport, setSport] = useState('');
+   const [good, setGood] = useState('');
+   const [bad, setBad] = useState('');
+   const [family, setFamily] = useState('');
+
    const [gender, setGender] = useState<TGender>('man');
    const [type, setType] = useState<TCharacteristicType>('-');
-
-   console.log(type);
 
    const [completedCharacteristic, setCompletedCharacteristic] = useState('Она будет здесь...');
 
@@ -54,14 +58,11 @@ const Creator = () => {
          <CreatorBlock setValue={setWorkPlace} value={workPlace} text='Место работы: ' type='text' />
          <CreatorBlock setValue={setStudyPlace} value={studyPlace} text='Место обучения: ' type='text' />
 
-         {/* <CreatorBlock error={dateError} setValue={setDate} value={date} text='Ключевые навыки: ' type='date' />
-         <CreatorBlock error={dateError} setValue={setDate} value={date} text='Спорт: ' type='date' />
-         <CreatorBlock error={dateError} setValue={setDate} value={date} text='Место рождения: ' type='date' />
-         <CreatorBlock error={dateError} setValue={setDate} value={date} text='Хорошие качества ' type='date' />
-         <CreatorBlock error={dateError} setValue={setDate} value={date} text='Плохие качества ' type='date' />
-         <CreatorBlock error={dateError} setValue={setDate} value={date} text='Какой цитатой можно описать человека ' type='date' />
-         //
-         <CreatorBlock error={dateError} setValue={setDate} value={date} text='Отношение к курению и  ' type='date' /> */}
+         <CreatorBlock setValue={setSport} value={sport} text='Спорт: ' type='date' />
+         <CreatorBlock setValue={setGood} value={good} text='Хорошие качества ' type='date' />
+         <CreatorBlock setValue={setBad} value={bad} text='Плохие качества ' type='date' />
+         <CreatorBlock setValue={setFamily} value={family} text='Плохие качества ' type='date' />
+
          <button
             className='creator_button'
             onClick={() => {
