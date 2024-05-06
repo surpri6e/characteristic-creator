@@ -1,0 +1,43 @@
+.creator_block {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   width: 100%;
+
+   font-size: 16px;
+
+   & > *:not(:last-child) {
+      margin-right: 10px;
+   }
+
+   input,
+   select {
+      width: 200px;
+      height: 30px;
+      padding: 5px;
+
+      font-size: 16px;
+
+      border-radius: 5px;
+
+      background-color: darken(white, 5);
+   }
+}
+
+@media screen and (max-width: 550px) {
+   .creator_block {
+      width: 100%;
+
+      flex-direction: column;
+      align-items: flex-start;
+
+      input {
+         width: 100%;
+      }
+
+      & > *:not(:last-child) {
+         margin-bottom: 5px;
+      }
+   }
+}
