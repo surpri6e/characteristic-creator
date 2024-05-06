@@ -1,4 +1,5 @@
 import { TCharacteristicType } from '../types/TCharacteristicType';
+import { TFamily } from '../types/TFamily';
 import { TGender } from '../types/TGender';
 import { dateHelper } from './dateHelper';
 import { forNegativeCharacteristic, forPositiveCharacteristic } from './randomPart';
@@ -13,6 +14,10 @@ export const getCompletedCharacteristic = (
    address: string,
    studyPlace: string,
    workPlace: string,
+   sport: string,
+   good: string,
+   bad: string,
+   family: TFamily,
 ): string => {
    userName = userName[0].toUpperCase() + userName.slice(1, userName.length);
    surname = surname[0].toUpperCase() + surname.slice(1, surname.length);
@@ -22,6 +27,7 @@ export const getCompletedCharacteristic = (
 
    const positiveCharacteristic = `
       Отношение к спиртным напиткам и курению - резко негативное. Ведет здоровый образ жизни. ${forPositiveCharacteristic(gender)}
+
       ${
          studyPlace
             ? `
@@ -38,7 +44,6 @@ export const getCompletedCharacteristic = (
                Последнее место работы: ${workPlace}.`
             : 'Не имеет никакого места работы.'
       }
-
 
       В коллективе позиционирует себя лидирующе.
    `;
@@ -69,8 +74,11 @@ export const getCompletedCharacteristic = (
       `
          Характеристика на человека ${userName} ${surname} ${patronymic}. Пол - ${gender === 'man' ? 'мужской' : 'женский'}.
          ${gender === 'man' ? 'Он родился' : 'Она родилась'} ${normalDate.day} ${normalDate.month} в ${normalDate.year} году. 
+         Из ${family === '+' ? 'благополучной, обеспеченной' : 'неблагополучной'} семьи.
          ${type === '+' ? positiveCharacteristic : negativeCharacteristic}
+         ${sport ? `Любимым видом спорта является - ${sport}.` : 'Любимый вид спорта не выявлен'}.
          ${address ? `Проживает по адресу: ${address}.` : `Не имеет постоянного места проживания.`}
-      `.replace(/\s+/g, ' ') + `\nДата создания: ${'06.05.2024'}`
+         Из положительных качеств можно выявить: ${good}. Отрицательные: ${bad}.
+      `.replace(/\s+/g, ' ') + `\n\nДата создания: ${'06.05.2024'}`
    );
 };
