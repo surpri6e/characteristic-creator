@@ -68,7 +68,7 @@ const Creator = () => {
 
          <CreatorBlock setValue={setSport} value={sport} text='Спорт: ' type='text' />
          <CreatorBlock error={goodError} setValue={setGood} value={good} text='Хорошие качества(Вин. п): ' type='text' />
-         <CreatorBlock error={badError} setValue={setBad} value={bad} text='Плохие качества(Вин. п): ' type='text' />
+         <CreatorBlock error={badError} setValue={setBad} value={bad} text='Плохие качества: ' type='text' />
 
          <div className='creator_block'>
             <p>Семья: </p>
