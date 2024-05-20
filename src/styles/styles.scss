@@ -38,3 +38,9 @@ body {
    flex-direction: column;
    align-items: center;
 }
+
+input:focus,
+button:focus,
+select:focus {
+   outline: 3px black solid;
+}
